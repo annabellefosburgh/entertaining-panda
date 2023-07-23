@@ -12,11 +12,11 @@ const {
   removeReaction,
 } = require("../../controllers/thoughtController");
 
-//Allows us to get all thoughts through our get request in the controller
-//Also allows us to post a new thought using the create request in the controller
+//Allows all thoughts through our get request in the controller
+//Also allows a new thought using the create request in the controller
 router.route("/").get(getThoughts).post(newThought);
 
-//When we get a single thought by id, we have the options to update or delete this thought
+//Get a single thought by id, we have the options to update or delete this thought
 router
   .route("/:thoughtId")
   .get(getOneThought)
