@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 const reactionSchema = require("./reaction");
 const dateFormat = require("../utils/date.js");
 
+//A skeleton collection that requires a thought to have a body, timestamp, associated user, and reaction count
 const thoughtSchema = new Schema(
     {
         thoughtText: {
@@ -30,6 +31,10 @@ const thoughtSchema = new Schema(
     }
 );
 
-//Something to return the length of the reaction count
+//Returning length of reactions on a thought to get the count
+ThoughtSchema.virtual("reactionCount").get(function () {
+    return this.reactions.length;
+  });
 
+  const Thought = model("Thought", ThoughtSchema);
 module.exports = thoughtSchema;

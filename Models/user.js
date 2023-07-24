@@ -1,6 +1,7 @@
 //Bringing in mongoose as a dependency
 const { Schema, model } = require("mongoose");
 
+//A Skeleton collection that requires a user to have a username, email, and will pull thoughts and friends from our other schemas
 const userSchema = new Schema(
     {
         username: {
@@ -36,7 +37,11 @@ const userSchema = new Schema(
       }
 );
 
-//Something here to return friend count of user
+//Returning the length of the friends for a user to get a friends count
+UserSchema.virtual("friendCount").get(function () {
+    return this.friends.length;
+  });
+  
 
 const User = model("User", userSchema);
 

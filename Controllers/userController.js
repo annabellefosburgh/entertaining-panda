@@ -68,6 +68,7 @@ const userPath = {
         .then((userData) => {
             res.json( { message: "User deleted!" })
             //BONUS: return thoughts associated with user id and deleteMany
+            return Thought.deleteMany({ _id: { $in: userData.thoughts } });
         })
         .catch(err => {
             console.log(err);

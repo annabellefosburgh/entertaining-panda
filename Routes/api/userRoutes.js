@@ -10,7 +10,7 @@ const {
   deleteUser,
   addFriend,
   removeFriend,
-} = require("../../controllers/userController");
+} = require("./../controllers/userController");
 
 //Gets all users and posts a new user
 router.route("/").get(getUsers).post(newUser);

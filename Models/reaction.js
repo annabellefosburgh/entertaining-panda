@@ -2,6 +2,7 @@
 const { Schema, Types } = require("mongoose");
 const dateFormat = require("../utils/date.js");
 
+//A skeleton collection that requires a reaction to have an id, body, associated user, and timestamp
 const reactionSchema = new Schema(
     {
         reactionId: {
