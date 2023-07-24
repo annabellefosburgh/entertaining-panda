@@ -1,6 +1,6 @@
 //Bringing in mongoose and helpers as dependency
 const { Schema, Types } = require("mongoose");
-const dateFormat = require("../utils/dateFormat");
+const dateFormat = require("../utils/date.js");
 
 const reactionSchema = new Schema(
     {

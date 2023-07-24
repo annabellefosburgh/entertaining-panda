@@ -8,7 +8,7 @@ const {
   newThought,
   updateThought,
   deleteThought,
-  addReaction,
+  newReaction,
   removeReaction,
 } = require("../../controllers/thoughtController");
 
@@ -24,7 +24,7 @@ router
   .delete(deleteThought);
 
 //Allows us to access the reations of a thought by id and post a new reaction to the thought
-router.route("/:thoughtId/reactions").post(addReaction);
+router.route("/:thoughtId/reactions").post(newReaction);
 
 //Allows us to access a specific reaction by id of a specific post and remove it.
 router.route("/:thoughtId/reactions/:reactionId").delete(removeReaction);

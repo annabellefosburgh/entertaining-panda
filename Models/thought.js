@@ -1,7 +1,7 @@
 //Requiring mongoose, our reaction model, and our helper as dependencies
 const { Schema, model } = require("mongoose");
 const reactionSchema = require("./reaction");
-const dateFormat = require("../utils/dateFormat");
+const dateFormat = require("../utils/date.js");
 
 const thoughtSchema = new Schema(
     {
