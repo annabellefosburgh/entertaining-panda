@@ -25,16 +25,16 @@ const thoughtSchema = new Schema(
     },
     {
         toJSON: {
-          getters: true,
+            getters: true,
         },
         id: false,
     }
 );
 
 //Returning length of reactions on a thought to get the count
-ThoughtSchema.virtual("reactionCount").get(function () {
-    return this.reactions.length;
-  });
+thoughtSchema.virtual("reactionCount").get(function () {
+    return this.reactions;
+});
 
-  const Thought = model("Thought", ThoughtSchema);
-module.exports = thoughtSchema;
+const Thought = model("Thought", thoughtSchema);
+module.exports = Thought;

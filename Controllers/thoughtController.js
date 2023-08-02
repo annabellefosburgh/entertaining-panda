@@ -5,8 +5,7 @@ const { Thought, User } = require('../Models');
 const thoughtPath = {
     //Grabs all thoughts
     getThoughts(req, res) {
-        Thought.find()
-        .sort({createdAt: -1})
+        Thought.find({})
         .then((thoughtData) => {
             res.json(thoughtData);
         })
@@ -31,15 +30,17 @@ const thoughtPath = {
     //Make a new thought
     newThought(req, res) {
       Thought.create(req.body)
-      .then((thoughtData) => {
+      .then((thought) => {
         return User.findOneAndUpdate(
             { _id: req.body.userId },
-            { $push: {thoughts: thoughtData._id} },
+            { $push: {thoughts: thought._id} },
             { new: true}
         );
       })
-      .then((thoughtData) => {
-        res.json({ message: "Thought created!"});
+      .then((thought) => {
+        !thought
+        ? res.status(404).json({ message: "No User find with this ID!" })
+        : res.json(thought);
       })
       .catch(err => {
         console.log(err);

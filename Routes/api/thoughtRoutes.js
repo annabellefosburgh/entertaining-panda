@@ -10,7 +10,7 @@ const {
   deleteThought,
   newReaction,
   removeReaction,
-} = require("../../controllers/thoughtController");
+} = require("../../Controllers/thoughtController");
 
 //Allows all thoughts through our get request in the controller
 //Also allows a new thought using the create request in the controller
