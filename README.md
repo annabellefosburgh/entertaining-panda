@@ -19,7 +19,11 @@ Clone the starter code in the repository. Run an ```npm install``` and then the 
 [Github Repository](https://github.com/annabellefosburgh/entertaining-panda)  
 
 ## Walkthrough
-[Here is a link to the gallery of images that show examples of Insomnia routes  used.](https://photos.app.goo.gl/hVNr87SDna1TPB1V6)  
+[Here is a link to the gallery of images that show examples of Insomnia routes  used.](https://photos.app.goo.gl/hVNr87SDna1TPB1V6) 
+
+https://github.com/annabellefosburgh/entertaining-panda/assets/124208861/56881ed7-30d4-4db4-b233-3a002047c669
+
+
 
 ## Contributors
 [Annabelle Fosburgh](https://github.com/annabellefosburgh)
